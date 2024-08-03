@@ -1,0 +1,41 @@
+<!-- admin_dashboard.html -->
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Departure Date</th>
+                <th>Return Date</th>
+                <th>Travel Destination</th>
+                <th>Package</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.departure_date }}</td>
+                <td>{{ user.return_date }}</td>
+                <td>{{ user.travel_destination }}</td>
+                <td>{{ user.package }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary">Logout</a>
+</div>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Register Here{% endblock %}
+
+{% block content %}
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="mb-4">Register Here</h1>
+            <form method="post" action="{{ url_for('register') }}" onsubmit="return validateform()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="myname1" placeholder="Name" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email-Id</label>
+                    <input type="email" name="myemail" placeholder="Email-Id" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phonenum">Phone No.</label>
+                    <input type="tel" name="myphone" placeholder="Phone No." id="phonenum" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" name="myage" placeholder="Age" class="form-control" required>
+                </div>
+                <fieldset class="form-group">
+                    <legend>Gender</legend>
+                    <div class="form-check">
+                        <input type="radio" name="mygender" value="Male" class="form-check-input" id="genderMale" required>
+                        <label class="form-check-label" for="genderMale">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="mygender" value="Female" class="form-check-input" id="genderFemale">
+                        <label class="form-check-label" for="genderFemale">Female</label>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <label for="departuredate">Departure</label>
+                    <input type="datetime-local" name="departuredate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="returndate">Return</label>
+                    <input type="datetime-local" name="returndate" class="form-control" required>
+                </div>
+                <fieldset class="form-group">
+                    <legend>Travel Destination</legend>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Kashmir" class="form-check-input" id="destinationKashmir">
+                        <label class="form-check-label" for="destinationKashmir">Kashmir</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Istanbul" class="form-check-input" id="destinationIstanbul">
+                        <label class="form-check-label" for="destinationIstanbul">Istanbul</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Paris" class="form-check-input" id="destinationParis">
+                        <label class="form-check-label" for="destinationParis">Paris</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Bali" class="form-check-input" id="destinationBali">
+                        <label class="form-check-label" for="destinationBali">Bali</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Dubai" class="form-check-input" id="destinationDubai">
+                        <label class="form-check-label" for="destinationDubai">Dubai</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Geneva" class="form-check-input" id="destinationGeneva">
+                        <label class="form-check-label" for="destinationGeneva">Geneva</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Port Blair" class="form-check-input" id="destinationPortBlair">
+                        <label class="form-check-label" for="destinationPortBlair">Port Blair</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="td" value="Rome" class="form-check-input" id="destinationRome">
+                        <label class="form-check-label" for="destinationRome">Rome</label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <legend>Package</legend>
+                    <div class="form-check">
+                        <input type="radio" name="locations" value="Bronze" class="form-check-input" id="packageBronze" required>
+                        <label class="form-check-label" for="packageBronze">Bronze</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="locations" value="Silver" class="form-check-input" id="packageSilver">
+                        <label class="form-check-label" for="packageSilver">Silver</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="locations" value="Gold" class="form-check-input" id="packageGold">
+                        <label class="form-check-label" for="packageGold">Gold</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="locations" value="Platinum" class="form-check-input" id="packagePlatinum">
+                        <label class="form-check-label" for="packagePlatinum">Platinum</label>
+                    </div>
+                </fieldset>
+                <div class="form-check">
+                    <input type="checkbox" name="t&c" checked class="form-check-input" id="termsAndConditions" required>
+                    <label class="form-check-label" for="termsAndConditions">I accept the Terms & Conditions.</label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
